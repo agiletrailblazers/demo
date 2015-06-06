@@ -19,9 +19,9 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:ssh://source.dev.cim.comcast.net:8766/stagger-maven-plugin</connection>
-        <url>scm:git:ssh://source.dev.cim.comcast.net:8766/stagger-maven-plugin</url>
-        <developerConnection>scm:git:ssh://source.dev.cim.comcast.net:8766/stagger-maven-plugin</developerConnection>
+        <connection>scm:git:ssh://github.com/agiletrailblazers/demo/stagger-maven-plugin</connection>
+        <url>scm:git:ssh://github.com/agiletrailblazers/demo/stagger-maven-plugin</url>
+        <developerConnection>scm:git:ssh://github.com/agiletrailblazers/demo/stagger-maven-plugin</developerConnection>
     </scm>
 
     <developers>
