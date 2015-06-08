@@ -29,7 +29,17 @@
 
     <properties>
         <maven.version>2.2.1</maven.version>
-        <sonar.jacoco.itReportPath>./target/${jacoco.out.file}</sonar.jacoco.itReportPath>
+        <!-- Location of the JaCoCo output file created by the agent execution during ITs. We want
+             all modules to dump their coverage information into a single file for Sonar to pick up.
+             Sonar is only going to look for one file so we put the file in target folder of the root of the
+             project when running a top-down build.  session.executionRootDirectory points there if
+             we run Maven from the top level older of the project.
+             If you don't do it this way, you have to define an absolute path to a fixed location
+             on the server or you have to put a relative path in every child module defining where JaCoCo is
+             to place its output file.  The last solution is error prone so the solution shown here or the use
+             of a fixed location is recommended. -->
+        <jacoco.out.path>${session.executionRootDirectory}/target</jacoco.out.path>
+        <jacoco.out.file>jacoco.exec</jacoco.out.file>
     </properties>
 
     <dependencies>
@@ -122,6 +132,8 @@
                     <goal>prepare-agent</goal>
                   </goals>
                   <configuration>
+                      <destFile>${jacoco.out.path}/${jacoco.out.file}</destFile>
+                      <propertyName>jacoco.agent.arg</propertyName>
                   </configuration>
                 </execution>
               </executions>
