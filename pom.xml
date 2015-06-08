@@ -121,6 +121,7 @@
                     <goal>prepare-agent</goal>
                   </goals>
                   <configuration>
+                      <destFile>target/jacoco.exec</destFile>
                   </configuration>
                 </execution>
               </executions>
