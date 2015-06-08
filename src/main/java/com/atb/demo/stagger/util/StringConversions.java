@@ -8,13 +8,13 @@ import scala.Option;
 import scala.collection.JavaConversions;
 import scala.collection.mutable.Buffer;
 
-public class Utils {
-    public static String getStrInOption(Option<String> scalaStr ) {
+public class StringConversions {
+    public String getStrInOption(Option<String> scalaStr ) {
         if (scalaStr.isEmpty()) return null;
         return scalaStr.get();
     }
 
-    public static String allowableValuesToString(AllowableValues allowableValues) {
+    public String allowableValuesToString(AllowableValues allowableValues) {
         if (allowableValues == null) {
             return null;
         }

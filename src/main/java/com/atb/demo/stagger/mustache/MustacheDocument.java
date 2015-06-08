@@ -1,6 +1,6 @@
 package com.atb.demo.stagger.mustache;
 
-import com.atb.demo.stagger.util.Utils;
+import com.atb.demo.stagger.util.StringConversions;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.wordnik.swagger.core.ApiValues;
 import com.wordnik.swagger.core.util.ModelUtil;
@@ -185,10 +185,12 @@ public class MustacheDocument implements Comparable<MustacheDocument> {
     }
 
     private void handleArrayType(MustacheItem mustacheItem, ModelRef item) {
+        StringConversions stringConversions = new StringConversions();
+
         if (item != null) {
             if (item.type() == null && item.ref() != null) {
-                mustacheItem.setTypeAsArray(Utils.getStrInOption(item.ref()));
-                responseTypes.add(Utils.getStrInOption(item.ref()));
+                mustacheItem.setTypeAsArray(stringConversions.getStrInOption(item.ref()));
+                responseTypes.add(stringConversions.getStrInOption(item.ref()));
             } else {
                 mustacheItem.setTypeAsArray(item.type());
             }

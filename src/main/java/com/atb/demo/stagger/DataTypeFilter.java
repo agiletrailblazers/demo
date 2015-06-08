@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class TypeUtils {
+public class DataTypeFilter {
     private static final List<String> basicTypes;
 
     static {
@@ -19,7 +19,7 @@ public class TypeUtils {
 
     public static final Pattern genericPattern = Pattern.compile("^(.*)<.*>$");
 
-    public static String getTrueType(String dataType) {
+    public String getTrueType(String dataType) {
         if(dataType == null) {
             return null;
         }
@@ -47,18 +47,18 @@ public class TypeUtils {
         return t;
     }
 
-    public static String filterBasicTypes(String linkType) {
+    public String filterBasicTypes(String linkType) {
         if (basicTypes.contains(linkType)) {
             return null;
         }
         return linkType;
     }
 
-    public static String upperCaseFirstCharacter(String inputString) {
+    public String upperCaseFirstCharacter(String inputString) {
         return inputString.substring(0, 1).toUpperCase() + inputString.substring(1);
     }
 
-    public static String AsArrayType(String elementType) {
+    public String AsArrayType(String elementType) {
         return "Array[" + elementType + "]";
     }
 }

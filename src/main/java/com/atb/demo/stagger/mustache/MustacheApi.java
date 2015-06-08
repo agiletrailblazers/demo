@@ -1,6 +1,6 @@
 package com.atb.demo.stagger.mustache;
 
-import com.atb.demo.stagger.util.Utils;
+import com.atb.demo.stagger.util.StringConversions;
 import com.wordnik.swagger.model.ApiDescription;
 
 import java.util.LinkedList;
@@ -16,12 +16,14 @@ public class MustacheApi {
     private final List<MustacheOperation> operations = new LinkedList<MustacheOperation>();
 
     public MustacheApi(String basePath, ApiDescription api) {
+        StringConversions stringConversions = new StringConversions();
+
         this.path = api.path();
         if (this.path != null && !this.path.startsWith("/")) {
             this.path = "/" + this.path;
         }
         this.url = basePath + api.path();
-        this.description = Utils.getStrInOption(api.description());
+        this.description = stringConversions.getStrInOption(api.description());
     }
 
     public void addOperation(MustacheOperation operation) {

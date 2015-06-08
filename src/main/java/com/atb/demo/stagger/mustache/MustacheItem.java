@@ -1,7 +1,7 @@
 package com.atb.demo.stagger.mustache;
 
-import com.atb.demo.stagger.util.Utils;
-import com.atb.demo.stagger.TypeUtils;
+import com.atb.demo.stagger.util.StringConversions;
+import com.atb.demo.stagger.DataTypeFilter;
 import com.wordnik.swagger.model.ModelProperty;
 
 public class MustacheItem {
@@ -21,16 +21,19 @@ public class MustacheItem {
 
     private String allowableValue;
 
+    DataTypeFilter typeFilter = new DataTypeFilter();
+
     public MustacheItem(String name, ModelProperty documentationSchema) {
+        StringConversions stringConversions = new StringConversions();
 
         this.name = name;
         this.type = documentationSchema.type();
         this.linkType = this.type;
-        this.description = Utils.getStrInOption(documentationSchema.description());
+        this.description = stringConversions.getStrInOption(documentationSchema.description());
         this.required = documentationSchema.required();
-        this.notes = Utils.getStrInOption(documentationSchema.description());
-        this.linkType = TypeUtils.filterBasicTypes(this.linkType);
-        this.allowableValue = Utils.allowableValuesToString(documentationSchema.allowableValues());
+        this.notes = stringConversions.getStrInOption(documentationSchema.description());
+        this.linkType = typeFilter.filterBasicTypes(this.linkType);
+        this.allowableValue = stringConversions.allowableValuesToString(documentationSchema.allowableValues());
     }
 
     public String getName() {
@@ -98,7 +101,7 @@ public class MustacheItem {
     }
 
     public void setTypeAsArray(String elementType) {
-        this.type = TypeUtils.AsArrayType(elementType);
-        setLinkType(TypeUtils.filterBasicTypes(elementType));
+        this.type = typeFilter.AsArrayType(elementType);
+        setLinkType(typeFilter.filterBasicTypes(elementType));
     }
 }

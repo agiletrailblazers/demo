@@ -1,8 +1,8 @@
 package com.atb.demo.stagger.mustache;
 
 
-import com.atb.demo.stagger.TypeUtils;
-import com.atb.demo.stagger.util.Utils;
+import com.atb.demo.stagger.DataTypeFilter;
+import com.atb.demo.stagger.util.StringConversions;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wordnik.swagger.model.Parameter;
@@ -25,14 +25,17 @@ public class MustacheParameter {
     private final String linkType;
 
     public MustacheParameter(Parameter para) {
+        DataTypeFilter dataTypeFilter = new DataTypeFilter();
+        StringConversions stringConversions = new StringConversions();
+
         this.name = para.name();
-        this.linkType = TypeUtils.getTrueType(para.dataType());
+        this.linkType = dataTypeFilter.getTrueType(para.dataType());
         this.required = para.required();
-        this.description = Utils.getStrInOption(para.description());
+        this.description = stringConversions.getStrInOption(para.description());
         this.type = para.dataType();
-        this.defaultValue = Utils.getStrInOption(para.defaultValue());
-        this.allowableValue = Utils.allowableValuesToString(para.allowableValues());
-        this.access = Utils.getStrInOption(para.paramAccess());
+        this.defaultValue = stringConversions.getStrInOption(para.defaultValue());
+        this.allowableValue = stringConversions.allowableValuesToString(para.allowableValues());
+        this.access = stringConversions.getStrInOption(para.paramAccess());
     }
 
     String getDefaultValue() {

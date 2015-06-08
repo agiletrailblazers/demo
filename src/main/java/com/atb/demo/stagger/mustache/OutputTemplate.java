@@ -1,8 +1,8 @@
 package com.atb.demo.stagger.mustache;
 
 import com.atb.demo.stagger.AbstractDocumentSource;
-import com.atb.demo.stagger.TypeUtils;
-import com.atb.demo.stagger.util.Utils;
+import com.atb.demo.stagger.DataTypeFilter;
+import com.atb.demo.stagger.util.StringConversions;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsonschema.JsonSchema;
 import com.wordnik.swagger.model.ApiDescription;
@@ -43,12 +43,14 @@ public class OutputTemplate {
     }
 
     public void addDateType(MustacheDocument mustacheDocument, MustacheDataType dataType) {
+        DataTypeFilter dataTypeFilter = new DataTypeFilter();
+
         if (dataTypes.contains(dataType)) {
             return;
         }
         dataTypes.add(dataType);
         for (MustacheItem item : dataType.getItems()) {
-            String trueType = TypeUtils.getTrueType(item.getType());
+            String trueType = dataTypeFilter.getTrueType(item.getType());
             if (trueType == null) {
                 continue;
             }
@@ -83,13 +85,16 @@ public class OutputTemplate {
      * @return
      */
     private MustacheDocument createMustacheDocument(ApiListing swaggerDoc) {
+        StringConversions stringConversions = new StringConversions();
+        DataTypeFilter dataTypeFilter = new DataTypeFilter();
+
         MustacheDocument mustacheDocument = new MustacheDocument(swaggerDoc);
 
         setApiVersion(swaggerDoc.apiVersion());
         setBasePath(swaggerDoc.basePath());
         for (scala.collection.Iterator<ApiDescription> it = swaggerDoc.apis().iterator(); it.hasNext(); ) {
             ApiDescription api = it.next();
-            mustacheDocument.setDescription(Utils.getStrInOption(api.description()));
+            mustacheDocument.setDescription(stringConversions.getStrInOption(api.description()));
 
             MustacheApi mustacheApi = new MustacheApi(swaggerDoc.basePath(), api);
 
@@ -114,7 +119,7 @@ public class OutputTemplate {
 
         for (String responseType : mustacheDocument.getResponseTypes()) {
             if (!mustacheDocument.getRequestTypes().contains(responseType)) {
-                String ttype = TypeUtils.getTrueType(responseType);
+                String ttype = dataTypeFilter.getTrueType(responseType);
                 if (ttype != null) {
                     missedTypes.add(ttype);
                 }

@@ -1,6 +1,6 @@
 package com.atb.demo.stagger.mustache;
 
-import com.atb.demo.stagger.TypeUtils;
+import com.atb.demo.stagger.DataTypeFilter;
 import com.wordnik.swagger.core.util.ModelUtil;
 import com.wordnik.swagger.model.Model;
 import scala.Option;
@@ -14,8 +14,10 @@ public class MustacheResponseClass {
     private LinkedList<MustacheResponseClass> genericClasses;
 
     public MustacheResponseClass(String responseClass) {
-        if ((TypeUtils.genericPattern.matcher(responseClass).matches())) {
-            String trueType = TypeUtils.getTrueType(responseClass);
+        DataTypeFilter dataTypeFilter = new DataTypeFilter();
+
+        if ((DataTypeFilter.genericPattern.matcher(responseClass).matches())) {
+            String trueType = dataTypeFilter.getTrueType(responseClass);
             this.classLinkName = trueType;
             this.className = trueType;
             genericClasses = new LinkedList<MustacheResponseClass>();
@@ -35,7 +37,8 @@ public class MustacheResponseClass {
                 }
             }
         } else {
-            String trueType = TypeUtils.getTrueType(responseClass);
+
+            String trueType = dataTypeFilter.getTrueType(responseClass);
             Option<Tuple2<String, Model>> m = ModelUtil.modelFromString(responseClass);
             if (!m.isEmpty()) {
                 this.classLinkName = m.get()._1();
