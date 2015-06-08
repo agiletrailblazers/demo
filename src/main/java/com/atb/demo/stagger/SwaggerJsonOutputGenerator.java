@@ -1,4 +1,4 @@
-package com.urbn.stagger;
+package com.atb.demo.stagger;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;

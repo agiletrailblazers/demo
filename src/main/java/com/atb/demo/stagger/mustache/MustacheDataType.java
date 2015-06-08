@@ -1,4 +1,4 @@
-package com.urbn.stagger.mustache;
+package com.atb.demo.stagger.mustache;
 
 import java.util.List;
 

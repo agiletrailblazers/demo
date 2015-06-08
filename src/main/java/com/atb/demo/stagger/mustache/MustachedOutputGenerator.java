@@ -1,7 +1,7 @@
-package com.urbn.stagger.mustache;
+package com.atb.demo.stagger.mustache;
 
-import com.urbn.stagger.GenerateException;
-import com.urbn.stagger.LogAdapter;
+import com.atb.demo.stagger.LogAdapter;
+import com.atb.demo.stagger.GenerateException;
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;
 import com.wordnik.swagger.model.ApiListing;

@@ -1,11 +1,11 @@
-package com.urbn.stagger.remote;
+package com.atb.demo.stagger.remote;
 
+import com.atb.demo.stagger.AbstractDocumentSource;
+import com.atb.demo.stagger.LogAdapter;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import com.urbn.stagger.AbstractDocumentSource;
-import com.urbn.stagger.LogAdapter;
 import com.wordnik.swagger.model.ApiDescription;
 import com.wordnik.swagger.model.ApiListing;
 import org.apache.http.HttpResponse;

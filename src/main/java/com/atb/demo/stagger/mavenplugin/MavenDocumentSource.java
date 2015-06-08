@@ -1,8 +1,8 @@
-package com.urbn.stagger.mavenplugin;
+package com.atb.demo.stagger.mavenplugin;
 
-import com.urbn.stagger.AbstractDocumentSource;
-import com.urbn.stagger.GenerateException;
-import com.urbn.stagger.LogAdapter;
+import com.atb.demo.stagger.AbstractDocumentSource;
+import com.atb.demo.stagger.LogAdapter;
+import com.atb.demo.stagger.GenerateException;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.config.SwaggerConfig;
 import com.wordnik.swagger.core.SwaggerSpec;

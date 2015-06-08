@@ -1,7 +1,7 @@
-package com.urbn.stagger.mustache;
+package com.atb.demo.stagger.mustache;
 
-import com.urbn.stagger.TypeUtils;
-import com.urbn.stagger.util.Utils;
+import com.atb.demo.stagger.util.Utils;
+import com.atb.demo.stagger.TypeUtils;
 import com.wordnik.swagger.model.ModelProperty;
 
 public class MustacheItem {

@@ -1,4 +1,4 @@
-package com.urbn.stagger.util;
+package com.atb.demo.stagger.util;
 
 import com.wordnik.swagger.model.AllowableListValues;
 import com.wordnik.swagger.model.AllowableRangeValues;

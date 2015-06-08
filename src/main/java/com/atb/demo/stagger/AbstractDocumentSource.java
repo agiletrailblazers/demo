@@ -1,4 +1,4 @@
-package com.urbn.stagger;
+package com.atb.demo.stagger;
 
 import com.wordnik.swagger.model.ApiListing;
 import com.wordnik.swagger.model.ResourceListing;
@@ -6,7 +6,7 @@ import com.wordnik.swagger.model.ResourceListing;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.urbn.stagger.mustache.MustachedOutputGenerator;
+import com.atb.demo.stagger.mustache.MustachedOutputGenerator;
 
 public abstract class AbstractDocumentSource {
 

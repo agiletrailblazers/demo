@@ -1,7 +1,6 @@
-package com.urbn.stagger.mustache;
+package com.atb.demo.stagger.mustache;
 
-import com.urbn.stagger.DocTemplateConstants;
-import com.urbn.stagger.GenerateException;
+import com.atb.demo.stagger.DocTemplateConstants;
 import com.wordnik.swagger.core.ApiValues;
 import com.wordnik.swagger.model.Authorization;
 import com.wordnik.swagger.model.Operation;

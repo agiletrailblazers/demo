@@ -1,4 +1,4 @@
-package com.urbn.stagger;
+package com.atb.demo.stagger;
 
 import java.util.Arrays;
 import java.util.List;

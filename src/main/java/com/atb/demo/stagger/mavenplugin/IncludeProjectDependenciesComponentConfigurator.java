@@ -1,4 +1,4 @@
-package com.urbn.stagger.mavenplugin;
+package com.atb.demo.stagger.mavenplugin;
 
 
 import org.codehaus.classworlds.ClassRealm;

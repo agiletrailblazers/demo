@@ -1,7 +1,7 @@
-package com.urbn.stagger.mavenplugin;
+package com.atb.demo.stagger.mavenplugin;
 
-import com.urbn.stagger.AbstractDocumentSource;
-import com.urbn.stagger.GenerateException;
+import com.atb.demo.stagger.AbstractDocumentSource;
+import com.atb.demo.stagger.GenerateException;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;

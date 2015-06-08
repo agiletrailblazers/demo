@@ -1,6 +1,6 @@
-package com.urbn.stagger.mavenplugin;
+package com.atb.demo.stagger.mavenplugin;
 
-import com.urbn.stagger.GenerateException;
+import com.atb.demo.stagger.GenerateException;
 import com.wordnik.swagger.annotations.Api;
 import org.reflections.Reflections;
 

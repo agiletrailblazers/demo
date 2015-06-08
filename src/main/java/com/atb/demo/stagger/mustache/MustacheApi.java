@@ -1,6 +1,6 @@
-package com.urbn.stagger.mustache;
+package com.atb.demo.stagger.mustache;
 
-import com.urbn.stagger.util.Utils;
+import com.atb.demo.stagger.util.Utils;
 import com.wordnik.swagger.model.ApiDescription;
 
 import java.util.LinkedList;

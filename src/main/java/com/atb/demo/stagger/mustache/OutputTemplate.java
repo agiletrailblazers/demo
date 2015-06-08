@@ -1,11 +1,10 @@
-package com.urbn.stagger.mustache;
+package com.atb.demo.stagger.mustache;
 
+import com.atb.demo.stagger.AbstractDocumentSource;
+import com.atb.demo.stagger.TypeUtils;
+import com.atb.demo.stagger.util.Utils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.jsonschema.JsonSchema;
-import com.urbn.stagger.AbstractDocumentSource;
-import com.urbn.stagger.GenerateException;
-import com.urbn.stagger.TypeUtils;
-import com.urbn.stagger.util.Utils;
 import com.wordnik.swagger.model.ApiDescription;
 import com.wordnik.swagger.model.ApiListing;
 import com.wordnik.swagger.model.Operation;

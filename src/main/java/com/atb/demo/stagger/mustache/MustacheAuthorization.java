@@ -1,4 +1,4 @@
-package com.urbn.stagger.mustache;
+package com.atb.demo.stagger.mustache;
 
 import com.wordnik.swagger.model.Authorization;
 import com.wordnik.swagger.model.AuthorizationScope;

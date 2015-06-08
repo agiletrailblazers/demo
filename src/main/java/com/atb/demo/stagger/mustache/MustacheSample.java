@@ -1,4 +1,4 @@
-package com.urbn.stagger.mustache;
+package com.atb.demo.stagger.mustache;
 
 public class MustacheSample {
     private String sampleDescription;

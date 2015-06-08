@@ -1,12 +1,11 @@
-package com.urbn.stagger.mustache;
+package com.atb.demo.stagger.mustache;
 
 
+import com.atb.demo.stagger.TypeUtils;
+import com.atb.demo.stagger.util.Utils;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.urbn.stagger.util.Utils;
 import com.wordnik.swagger.model.Parameter;
-
-import static com.urbn.stagger.TypeUtils.getTrueType;
 
 public class MustacheParameter {
     private final String allowableValue;
@@ -27,7 +26,7 @@ public class MustacheParameter {
 
     public MustacheParameter(Parameter para) {
         this.name = para.name();
-        this.linkType = getTrueType(para.dataType());
+        this.linkType = TypeUtils.getTrueType(para.dataType());
         this.required = para.required();
         this.description = Utils.getStrInOption(para.description());
         this.type = para.dataType();

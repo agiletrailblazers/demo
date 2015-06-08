@@ -1,8 +1,7 @@
-package com.urbn.stagger.mustache;
+package com.atb.demo.stagger.mustache;
 
+import com.atb.demo.stagger.util.Utils;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.urbn.stagger.GenerateException;
-import com.urbn.stagger.util.Utils;
 import com.wordnik.swagger.core.ApiValues;
 import com.wordnik.swagger.core.util.ModelUtil;
 import com.wordnik.swagger.model.*;

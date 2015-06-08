@@ -1,6 +1,6 @@
-package com.urbn.stagger.mustache;
+package com.atb.demo.stagger.mustache;
 
-import com.urbn.stagger.TypeUtils;
+import com.atb.demo.stagger.TypeUtils;
 import com.wordnik.swagger.core.util.ModelUtil;
 import com.wordnik.swagger.model.Model;
 import scala.Option;
