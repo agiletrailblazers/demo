@@ -29,6 +29,7 @@
 
     <properties>
         <maven.version>2.2.1</maven.version>
+        <sonar.jacoco.itReportPath>./target/${jacoco.out.file}</sonar.jacoco.itReportPath>
     </properties>
 
     <dependencies>
@@ -110,6 +111,21 @@
     <build>
         <finalName>stagger-maven-plugin</finalName>
         <plugins>
+            <plugin>
+              <groupId>org.jacoco</groupId>
+              <artifactId>jacoco-maven-plugin</artifactId>
+              <version>0.7.5.201505241946</version>
+              <executions>
+                <execution>
+                  <id>prepare-agent</id>
+                  <goals>
+                    <goal>prepare-agent</goal>
+                  </goals>
+                  <configuration>
+                  </configuration>
+                </execution>
+              </executions>
+            </plugin>
             <plugin>
                 <groupId>org.codehaus.plexus</groupId>
                 <artifactId>plexus-maven-plugin</artifactId>
